@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+    --color-mocha: #A38A75;
+    --color-mocha-light: #C4B4A5;
+    --color-terracotta: #C06C4D;
+    --color-beige: #F5F1ED;
+    --color-white-custom: #FFFFFF;
+    --color-text-dark: #3D352E;
+    --color-text-muted: #706254;
+
+    --font-display: "Playfair Display", serif;
+    --font-script: "Pinyon Script", cursive;
+    --font-body: "Outfit", sans-serif;
+}
+
+@layer base {
+    body {
+        @apply font-body text-text-dark bg-white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-display uppercase tracking-widest;
+    }
+
+    .script-font {
+        @apply font-script normal-case tracking-normal text-terracotta;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

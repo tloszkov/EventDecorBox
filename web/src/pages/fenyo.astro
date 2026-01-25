@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Fenyőtermesztés | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-4xl mx-auto text-center space-y-12">
+      <div class="space-y-4 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Téli Kínálatunk</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Fenyőtermesztés</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+      </div>
+
+      <div class="aspect-video bg-beige overflow-hidden fade-in">
+           <img src="https://picsum.photos/seed/pines/1200/800" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="space-y-6 text-text-muted leading-relaxed fade-in">
+          <p>
+            Évek óta, minden decemberben saját nevelésű, prémium minőségű friss, karácsonyfának való fákat vásárolhatnak egyenesen tőlünk, a termelőktől.
+          </p>
+          <p>
+            Nordmann, ezüst és lucfenyők választhatóak különböző méretekben, hogy otthonotokba is beköltözzön az ünnepi illat és hangulat.
+          </p>
+          <div class="pt-8">
+              <p class="text-[10px] uppercase tracking-widest font-bold text-mocha">Szezonális nyitvatartás: December 1-től</p>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

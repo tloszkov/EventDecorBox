@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Különleges Projektek | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-4xl mx-auto space-y-24">
+      
+      <div id="ujszekely" class="fade-in space-y-12">
+        <div class="text-center space-y-4">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Referencia</span>
+          <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest leading-tight">Esketőterem - Újszékely</h1>
+          <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+        </div>
+
+        <div class="aspect-video bg-beige overflow-hidden">
+             <!-- Placeholder -->
+            <div class="w-full h-full bg-[url('https://picsum.photos/seed/ujszekely/1200/800')] bg-cover bg-center"></div>
+        </div>
+
+        <div class="prose prose-mocha max-w-none text-text-muted leading-relaxed space-y-6">
+          <p class="text-lg font-display italic text-text-dark text-center">Újszékely község korábbi tanácstermének újjászületése</p>
+          <p>
+            Egy fiatalos, lendületes teret alkottunk meg, ahol az esküvői fogadalmak és az örökkévalóság elegáns harmóniában találkoznak. Minden részletnek megvan a maga üzenete:
+          </p>
+          <ul class="space-y-4">
+            <li><strong>Földszínek:</strong> Textíliák az év legnemesebb árnyalataiban, melyek időtálló eleganciát és természetes nyugalmat árasztanak.</li>
+            <li><strong>Monumentális csillárok:</strong> Pompás fényáradatba borítják a teret, emelve az alkalom ünnepélyességét.</li>
+            <li><strong>Boldogságkapu & Karikagyűrűtartó:</strong> Fából készült egyedi tervezés, mely a tradíciók mély gyökereit szimbolizálja.</li>
+            <li><strong>Selyemvirág kompozíciók:</strong> Az időtlen szépséget és eleganciát képviselik, a természetesség illúzióját keltve.</li>
+            <li><strong>80 cm-es Szerelemfa:</strong> Izlandi zuzmóból készült központi dísz, mely az összetartozás örök virágzását jelképezi.</li>
+          </ul>
+          <p class="text-center pt-8">
+            Ez az álomprojekt lehetőséget adott arra, hogy minden kreativitásomat és szenvedélyemet beleadjam. Hálás szívvel köszönöm a bizalmat Újszékely község elöljáróinak!
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const events = [
+  "Zsófi keresztelője", "Fanni szülinapja", "Petra keresztelője", "Boti keresztelője",
+  "Gergő keresztelője", "Maja keresztelője", "Boti konfirmálása", "Flóra keresztelője",
+  "Mózes-Eliot keresztelője", "Petra-Lotti keresztelője", "Magor keresztelője",
+  "Bálint keresztelője", "Dávid keresztelője"
+];
+---
+
+<Layout title="Rendezvények | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-20 space-y-6 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Családi & Cégs események</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest text-text-dark">Rendezvények</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+        <p class="text-text-muted max-w-2xl mx-auto pt-4 leading-relaxed italic">
+            Legyen szó eljegyzésről, polgári szertartásról, keresztelőről, ballagásról, évfordulóról, születésnapról vagy bármilyen különleges alkalomról – a dekoráció megadja az esemény hangulatát. 
+            Személyre szabott díszítéssel, harmonikus színekkel és egyedi részletekkel varázsolom ünnepivé a helyszínt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {events.map((event, index) => (
+          <div class="group fade-in">
+            <div class="aspect-square bg-beige overflow-hidden border border-beige relative">
+              <div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style={`background-image: url('https://picsum.photos/seed/event-${index}/800/800'); filter: sepia(0.05);`}></div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500"></div>
+            </div>
+            <div class="pt-6 text-center">
+              <h3 class="script-font text-3xl">{event}</h3>
+              <p class="text-[10px] uppercase tracking-widest text-text-muted mt-2">Személyre szabott dekoráció</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    id: 'dekoracio',
+    title: 'Esküvői Dekoráció',
+    desc: 'Teljes körű tervezés és kivitelezés a menyasszonyi csokortól a teremig.',
+    image: 'https://picsum.photos/seed/serv1/800/600',
+    link: '/gallery'
+  },
+  {
+    id: 'vendeglatas',
+    title: 'Vendéglátás',
+    desc: 'Sóskút Fogadó: Szállás és étkeztetés egy helyen.',
+    image: 'https://picsum.photos/seed/serv2/800/600',
+    link: '/vendeglatas'
+  },
+  {
+    id: 'berles',
+    title: 'Dekor Bérlés',
+    desc: 'Bútorok, textilek és dekorációs kellékek bérbeadása DIY pároknak.',
+    image: 'https://picsum.photos/seed/serv3/800/600',
+    link: '/berles'
+  },
+  {
+    id: 'fenyo',
+    title: 'Fenyőtermesztés',
+    desc: 'Saját nevelésű, prémium minőségű fenyőfák karácsonyra.',
+    image: 'https://picsum.photos/seed/serv4/800/600',
+    link: '/fenyo'
+  }
+];
+---
+
+<Layout title="Szolgáltatások | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 space-y-4 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Miben segítünk?</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Szolgáltatások</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {services.map(service => (
+          <div id={service.id} class="group relative aspect-[16/10] overflow-hidden bg-mocha fade-in">
+            <img src={service.image} alt={service.title} class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-10 text-white space-y-4">
+                <h2 class="text-3xl font-display tracking-widest">{service.title}</h2>
+                <p class="max-w-sm text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    {service.desc}
+                </p>
+                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">
+                    <a href={service.link} class="text-[10px] uppercase tracking-widest font-bold border border-white px-6 py-3 hover:bg-white hover:text-mocha transition-colors">
+                        Részletek
+                    </a>
+                </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

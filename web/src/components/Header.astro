@@ -1,0 +1,83 @@
+---
+const menuItems = [
+  { label: 'Bemutatkozás', href: '/#about' },
+  { 
+    label: 'Dekoráció', 
+    href: '/gallery',
+    children: [
+      { label: 'Esküvők', href: '/gallery#eskuvok' },
+      { label: 'Rendezvények', href: '/rendezvenyek' },
+      { label: 'Katalógus', href: '/katalogus' },
+      { label: 'Ajánlások', href: '/#ajanlasok' },
+      { label: 'Árajánlatkérés', href: '/kapcsolat' },
+      { label: 'Különleges Projektek', href: '/projektek' },
+    ]
+  },
+  { 
+    label: 'Esküvői Kisokos', 
+    href: '/kisokos',
+    children: [
+      { label: 'Idei Trendek', href: '/kisokos#trendek' },
+      { label: 'Mit kell tudnod?', href: '/kisokos#tudnivalok' },
+      { label: 'Stílusok', href: '/kisokos#stilusok' },
+      { label: 'Csekklista', href: '/kisokos#csekklista' },
+      { label: 'Hogyan dolgozom?', href: '/kisokos#folyamat' },
+    ]
+  },
+  { 
+    label: 'Szolgáltatások', 
+    href: '/szolgaltatasok',
+    children: [
+      { label: 'Dekoráció', href: '/gallery' },
+      { label: 'Vendéglátás', href: '/vendeglatas' },
+      { label: 'Bérlés', href: '/berles' },
+      { label: 'Fenyőtermesztés', href: '/fenyo' },
+    ]
+  },
+  { 
+    label: 'Vendéglátás', 
+    href: '/vendeglatas',
+    children: [
+      { label: 'Sóskút Fogadó', href: '/vendeglatas#soskut' },
+      { label: '(Panzió)', href: '/vendeglatas#panzio' },
+    ]
+  },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Kapcsolat', href: '/kapcsolat' },
+];
+---
+
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-beige h-20 flex items-center justify-center">
+  <div class="hidden lg:flex gap-8">
+    {menuItems.map(item => (
+      <div class="relative group h-20 flex items-center">
+        <a href={item.href} class="text-xs font-semibold uppercase tracking-widest text-text-dark hover:text-terracotta transition-colors py-2">
+          {item.label}
+        </a>
+        
+        {item.children && (
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[220px] shadow-xl border border-beige py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            {item.children.map(child => (
+              <a href={child.href} class="block px-6 py-2 text-[10px] uppercase tracking-widest text-text-muted hover:text-terracotta hover:bg-beige transition-colors text-center">
+                {child.label}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Mobile Menu Button (Placeholder) -->
+  <button id="mobile-menu-btn" class="lg:hidden absolute left-5 text-xl">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <div class="lg:hidden font-display text-lg tracking-widest">EVENTBOX</div>
+</nav>
+
+<div class="h-20"></div>
+
+<script>
+  // Simple mobile menu toggle logic could go here
+</script>

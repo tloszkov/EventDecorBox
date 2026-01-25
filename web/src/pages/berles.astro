@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Bérlés | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-6xl mx-auto space-y-24">
+      <div class="max-w-4xl mx-auto space-y-16">
+        <div class="text-center space-y-4 fade-in">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Tárgyak & Bútorok</span>
+          <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest text-text-dark">Bérlés</h1>
+          <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+          <p class="text-text-muted pt-4 max-w-2xl mx-auto">
+            Bérelhető kellékeinkkel segítünk, hogy saját magad is megvalósíthasd az álmodott dekorációt. Bútorok, textilek és egyedi kiegészítők tárháza áll rendelkezésedre.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 fade-in">
+            <div class="bg-beige/20 p-8 border border-beige/50 space-y-4">
+                <h2 class="text-xl font-display text-mocha">Dekorációs elemek</h2>
+                <p class="text-sm text-text-muted leading-relaxed">Állványok, hátterek, táblák, asztalszámok, vázák, gyertyatartók, kész asztali díszek, Candy Bar kellékek, fényfüzérek.</p>
+            </div>
+            <div class="bg-beige/20 p-8 border border-beige/50 space-y-4">
+                <h2 class="text-xl font-display text-mocha">Bútorok</h2>
+                <p class="text-sm text-text-muted leading-relaxed">Crossback (X hátú) szék, kerekasztal, koktélasztal, sátor.</p>
+            </div>
+            <div class="bg-beige/20 p-8 border border-beige/50 space-y-4">
+                <h2 class="text-xl font-display text-mocha">Textilek</h2>
+                <p class="text-sm text-text-muted leading-relaxed">Abroszok, székszoknyák, masnik, asztali futók több színben és anyagban.</p>
+            </div>
+            <div class="bg-beige/20 p-8 border border-beige/50 space-y-4">
+                <h2 class="text-xl font-display text-mocha">“Összejövetel” szettek</h2>
+                <p class="text-sm text-text-muted leading-relaxed">Bútorzat, textilek, tányérok, evőeszközök, poharak + sörcsap a kényelmes ünnepléshez.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- Bérleti Igény Leadása Szekció -->
+      <div id="igeny-leadasa" class="max-w-4xl mx-auto bg-white border border-beige p-12 shadow-sm fade-in scroll-mt-32">
+        <div class="text-center mb-12 space-y-4">
+            <h2 class="text-3xl font-display uppercase tracking-widest text-text-dark">Bérleti Igény Leadása</h2>
+            <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+            <p class="text-text-muted text-sm pt-4">Kérlek, add meg, mely eszközökre lenne szükséged, és hamarosan felvesszük veled a kapcsolatot a készletünkkel és az árakkal kapcsolatban.</p>
+        </div>
+
+        <form class="space-y-8" onsubmit="return false;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Név</label>
+                    <input type="text" class="w-full bg-beige/30 border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="Kis Erika" />
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">E-mail</label>
+                    <input type="email" class="w-full bg-beige/30 border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="erika@pelda.hu" />
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Milyen eszközökre van szükséged?</label>
+                <textarea class="w-full bg-beige/30 border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none min-h-[150px]" placeholder="Pl. 50db Crossback szék, 5db kerekasztal..."></textarea>
+            </div>
+            <button type="button" class="w-full bg-mocha text-white py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-mocha-dark transition-all">Igény Leadása</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

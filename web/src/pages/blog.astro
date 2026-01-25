@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const posts = [
+  {
+    title: "Mennyibe kerül a dekor?",
+    excerpt: "Mindig mosolygok egy kicsit, amikor érkezik a kérdés, mert nincs egy fix válasz. Minden esküvő más...",
+    date: "2024.11.10",
+    image: "https://picsum.photos/seed/blog1/800/600"
+  },
+  {
+    title: "Ki díszíti az esküvői tortát?",
+    excerpt: "Gyakori kérdés, ami felmerül... az utolsó pillanatban. Pedig a torta a nagy nap egyik látványos eleme.",
+    date: "2024.10.15",
+    image: "https://picsum.photos/seed/blog2/800/600"
+  },
+  {
+    title: "Tiltólistás esküvői virágok?",
+    excerpt: "Sokan még mindig úgy vélik, hogy vannak 'esküvőre való' és 'temetőbe való' virágok. Tényleg léteznek?",
+    date: "2024.09.20",
+    image: "https://picsum.photos/seed/blog3/800/600"
+  }
+];
+---
+
+<Layout title="Blog | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-20 space-y-4 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Történetek & Tippek</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Blog</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {posts.map(post => (
+          <article class="group cursor-pointer fade-in">
+            <div class="aspect-video overflow-hidden bg-beige mb-6">
+                <img src={post.image} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div class="space-y-4">
+                <span class="text-[10px] uppercase tracking-widest text-mocha font-bold">{post.date}</span>
+                <h2 class="text-xl font-display group-hover:text-terracotta transition-colors">{post.title}</h2>
+                <p class="text-sm text-text-muted leading-relaxed line-clamp-3">{post.excerpt}</p>
+                <div class="pt-2">
+                    <span class="text-[10px] uppercase tracking-widest font-bold border-b border-terracotta pb-1">Olvasd tovább</span>
+                </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Vendéglátás | Sóskút Fogadó">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-4xl mx-auto space-y-24">
+      
+      <div id="soskut" class="fade-in space-y-12">
+        <div class="text-center space-y-4">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Helyszín</span>
+          <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Sóskút Fogadó</h1>
+          <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+        </div>
+
+        <div class="aspect-video bg-beige overflow-hidden">
+             <!-- Placeholder -->
+            <div class="w-full h-full bg-[url('https://picsum.photos/seed/soskut/1200/800')] bg-cover bg-center"></div>
+        </div>
+
+        <div class="prose prose-mocha max-w-none text-center space-y-8 text-text-muted leading-relaxed">
+          <h3 class="font-display italic normal-case text-2xl text-text-dark">Újjászületik egy régi legenda</h3>
+          <p>
+            Székelykeresztúr egykor nyüzsgő részén, Sóskúton állt egy vendéglő, ahol zajlott az élet: családi ebédek, ünnepek, baráti beszélgetések és felejthetetlen esték emlékei születtek itt. Az elmúlt 30 évben azonban az épület elcsendesedett és az enyészeté lett… most viszont <strong>új életre kel</strong>.
+          </p>
+          <p>
+            A jól ismert <strong>Fogadó Vendégház</strong> ebben az épületben talált új otthonra, és itt folytatjuk családi vállalkozásunkat, hű maradva a nevünkhöz és az épület múltjához. Így született meg a <strong>Sóskút Fogadó</strong>.
+          </p>
+          <p>
+            Hisszük, hogy a régi épületnek lelke van – és mi mindent megteszünk, hogy ebből minél többet megőrizzünk. Szeretnénk, ha a múlt történetei tovább élnének, találkozva a jövővel. Várunk benneteket bővülő kínálattal és a már jól ismert vendégszeretetünkkel egy olyan épületben, ami több mint 20 éve várta, hogy újra élettel teljen meg.
+          </p>
+        </div>
+      </div>
+
+      <div id="panzio" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in bg-beige/30 p-12">
+        <div class="space-y-6">
+            <h2 class="text-2xl font-display uppercase tracking-widest">Szállás & Panzió</h2>
+            <p class="text-sm text-text-muted leading-relaxed">
+                A Sóskút Fogadó nem csupán rendezvényhelyszín, hanem pihenőhely is egyben. 
+                Kényelmes szobáinkkal és a már jól ismert vendégszeretetünkkel várjuk a messziről érkezőket vagy a rendezvények után pihenni vágyó vendégeket.
+            </p>
+            <button class="text-xs font-bold uppercase tracking-widest border border-mocha px-8 py-3 hover:bg-mocha hover:text-white transition-all">Szobafoglalás</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-square bg-white shadow-lg overflow-hidden">
+                <div class="w-full h-full bg-[url('https://picsum.photos/seed/room1/400/400')] bg-cover bg-center"></div>
+            </div>
+            <div class="aspect-square bg-white shadow-lg overflow-hidden mt-8">
+                <div class="w-full h-full bg-[url('https://picsum.photos/seed/room2/400/400')] bg-cover bg-center"></div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

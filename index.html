@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventBox Decor | Esküvő. Harmónia. Stílus.</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for mobile menu icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigáció -->
+    <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-container" id="nav-links">
+            <a href="#bemutatkozas" class="nav-item">Bemutatkozás</a>
+
+            <div class="nav-item has-dropdown">
+                Dekoráció
+                <div class="dropdown">
+                    <a href="#eskuvok">Esküvők</a>
+                    <a href="#rendezvenyek">Rendezvények</a>
+                    <a href="#katalogus">Katalógus</a>
+                    <a href="#ajanlasok">Ajánlások</a>
+                    <a href="#arajanlatkeres">Árajánlatkérés</a>
+                    <a href="#projektek">Különleges Projektek</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                Esküvői Kisokos
+                <div class="dropdown">
+                    <a href="#trendek">Idei Trendek</a>
+                    <a href="#tudnivalok">Mit kell tudnod?</a>
+                    <a href="#stilusok">Stílusok</a>
+                    <a href="#csekklista">Csekklista</a>
+                    <a href="#folyamat">Hogyan dolgozom?</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                Szolgáltatások
+                <div class="dropdown">
+                    <a href="#eskuvok">Dekoráció</a>
+                    <a href="#vendeglatas">Vendéglátás</a>
+                    <a href="#berles">Bérlés</a>
+                    <a href="#fenyo">Fenyőtermesztés</a>
+                </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+                Vendéglátás
+                <div class="dropdown">
+                    <a href="#soskut">Sóskút Fogadó</a>
+                    <a href="#panzio">(Panzió)</a>
+                </div>
+            </div>
+
+            <a href="#blog" class="nav-item">Blog</a>
+            <a href="#kapcsolat" class="nav-item">Kapcsolat</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1 class="script-font">EventBox Decor</h1>
+        <p style="letter-spacing: 6px; text-transform: uppercase; margin-top: 15px; font-size: 0.9rem;">Esküvő •
+            Harmónia • Stílus</p>
+    </header>
+
+    <!-- Bemutatkozás -->
+    <section id="bemutatkozas" class="fade-in">
+        <div class="section-title">
+            <h2>Bemutatkozás</h2>
+            <div class="divider"></div>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Nagy Emese vagyok, az EventBox
+                Decor megálmodója. Szenvedélyem a díszítés, mely hivatásommá vált Erdély szívében.</p>
+            <p style="color: var(--text-muted);">Folyamatosan képzem magam, hogy a Ti Nagy Napotokon a legjobbat
+                nyújthassam. Hiszen a tökéletes alkotásra csak egyetlen lehetőségem van.</p>
+        </div>
+    </section>
+
+    <!-- Katalógus - Középen, hangsúlyosan -->
+    <section id="katalogus" class="catalogue-banner fade-in">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <span>Inspiráció & Tervezés</span>
+            <h2>Ingyenes Esküvői Dekorációs Katalógus</h2>
+            <p style="margin-bottom: 3rem; color: rgba(255,255,255,0.9);">
+                Fedezd fel munkáinkat részletesen, ismerd meg a legújabb trendeket és tudj meg többet az irányárainkról.
+            </p>
+            <button class="btn-white">Kérem az ingyenes katalógust</button>
+        </div>
+    </section>
+
+    <!-- Dekorációs Referenciák (Kártyák) -->
+    <section id="eskuvok" class="fade-in">
+        <div class="section-title">
+            <h2>Legutóbbi Esküvőink</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="portfolio-grid">
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('event_decor_hero.png');"></div>
+                <div class="card-content">
+                    <div class="script-font" style="font-size: 2.2rem;">Szilvi & Levi</div>
+                    <div class="card-date">2024. Augusztus</div>
+                    <p class="card-desc">"Visszafogott mégis elegáns és kifinomult dekoráció... Teljes mértékben látszik
+                        az, hogy mennyire szereti a munkáját!"</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('event_decor_hero.png'); filter: sepia(0.2);"></div>
+                <div class="card-content">
+                    <div class="script-font" style="font-size: 2.2rem;">Csenge & Zsolt</div>
+                    <div class="card-date">2024. Július</div>
+                    <p class="card-desc">"Mesebeli volt a végeredmény... Emese az első pillanattól velem álmodott az
+                        esküvői dekorációról."</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img" style="background-image: url('event_decor_hero.png'); filter: grayscale(0.1);">
+                </div>
+                <div class="card-content">
+                    <div class="script-font" style="font-size: 2.2rem;">Ági & Barni</div>
+                    <div class="card-date">2024. Szeptember</div>
+                    <p class="card-desc">"A végeredmény sokkal-sokkal csodásabb és színesebb lett, mint az évek során
+                        kreált Pinterest boardom."</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Vendéglátás -->
+    <section id="vendeglatas" style="background-color: #fafaf9;" class="fade-in">
+        <div class="section-title">
+            <h2>Vendéglátás</h2>
+            <div class="divider"></div>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h3 style="margin-bottom: 2rem;">Sóskút Fogadó</h3>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">Székelykeresztúr egykor nyüzsgő részén
+                újjászületik egy legenda. A Fogadó Vendégház új otthonra talált, ahol a múlt történetei találkoznak a
+                jövővel.</p>
+            <div
+                style="height: 400px; background: #e5e5e5 url('event_decor_hero.png') center/cover; margin-bottom: 2rem;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Kapcsolat -->
+    <footer id="kapcsolat">
+        <div class="section-title">
+            <h2>Kapcsolat</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="footer-contact">
+            <div>
+                <h4>EventBox Decor</h4>
+                <p>Nagy Emese T.</p>
+                <p>Okleveles esküvői dekoratőr</p>
+                <p><i class="fas fa-phone"></i> +40 774 546 085</p>
+                <p><i class="fas fa-envelope"></i> nemeset@gmail.com</p>
+            </div>
+            <div>
+                <h4>Sóskút Fogadó</h4>
+                <p>Fazakas Attila - manager</p>
+                <p><i class="fas fa-phone"></i> +40 741 430 904</p>
+                <p><i class="fas fa-location-dot"></i> Székelykeresztúr, Sóskút u. 26.</p>
+            </div>
+            <div>
+                <h4>Kövess Minket</h4>
+                <p>Instagram: @eventboxdecor</p>
+                <p>Facebook: EventBox Decor</p>
+            </div>
+        </div>
+
+        <div
+            style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 3rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">
+            &copy; 2026 EventBox Decor. Minden jog fenntartva.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for all links and mobile menu fix
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('nav-links').classList.remove('active');
+
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fade-in animation on scroll
+        const faderObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => faderObserver.observe(el));
+    </script>
+</body>
+
+</html>

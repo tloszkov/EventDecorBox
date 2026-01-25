@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Katalógus Igénylése | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16 space-y-6 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Inspiráció & Árak</span>
+        <h1 class="text-4xl font-display uppercase tracking-widest text-text-dark">Katalógus Igénylése</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+        <p class="text-text-muted pt-4 leading-relaxed">
+            Katalógusunkban részletesen olvashatsz rólunk, a munkánk menetéről, valamint az egyes dekorációs elemekről. Megtalálhatod benne az irányárainkat is, melyek segítenek a tervezés kezdeti szakaszában.
+        </p>
+      </div>
+
+      <div class="bg-beige/30 p-12 rounded-sm fade-in">
+        <form class="space-y-8" onsubmit="return false;">
+          <div class="space-y-2">
+            <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Teljes Név</label>
+            <input type="text" required class="w-full bg-white border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="Kis Erika" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">E-mail Cím</label>
+            <input type="email" required class="w-full bg-white border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="erika@pelda.hu" />
+          </div>
+          <div class="space-y-2">
+            <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Tervezett Esemény Időpontja</label>
+            <input type="date" class="w-full bg-white border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none" />
+          </div>
+          <p class="text-[10px] text-text-muted italic">A katalógust automatikusan elküldjük a megadott e-mail címre az igénylés után.</p>
+          <button type="button" class="w-full bg-mocha text-white py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-mocha-dark transition-all shadow-lg">InGYenes Katalógus Kérése</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

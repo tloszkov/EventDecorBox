@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const couples = [
+  "Bogi és Szabi", "Csenge és Zsolt", "Betti és Szili", "Szilvi és Levi",
+  "Andrea és Norbert", "Orsi és Ricsi", "Andi és Peti", "Ági és Barni",
+  "Andrea és Barna", "Andrea és Loránd", "Saci és Zsolt", "Emőke és Tamás",
+  "Blanka és Zsolt", "Mónika és Norbert", "Edina és Hunor", "Emőke és Dénes",
+  "Edina és István", "Kincső és Barni", "Szidi és Ottó", "Ágnes és Zsolt",
+  "Andrea és Tamás", "Eszter és Norbert"
+];
+---
+
+<Layout title="Munkáink | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 space-y-4 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Referenciák</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Munkáink</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+      </div>
+
+      <div id="eskuvok" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {couples.map((couple, index) => (
+          <div class="group fade-in">
+            <div class="aspect-[4/5] bg-beige overflow-hidden border border-beige relative">
+              <!-- Placeholder for images -->
+              <div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style={`background-image: url('https://picsum.photos/seed/${index + 10}/800/1000'); filter: sepia(0.1);`}></div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span class="text-white text-xs uppercase tracking-[0.3em] font-bold border border-white px-6 py-3">Megtekintés</span>
+              </div>
+            </div>
+            <div class="pt-6 text-center">
+              <h3 class="script-font text-3xl">{couple}</h3>
+              <p class="text-[10px] uppercase tracking-widest text-text-muted mt-2">Esküvői Dekoráció</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

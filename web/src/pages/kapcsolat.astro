@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kapcsolat | EventBox Decor">
+  <Header />
+  
+  <main class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-20 space-y-4 fade-in">
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Vedd fel velünk a kapcsolatot</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Kapcsolat</h1>
+        <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        
+        <!-- Contact Form (Placeholder) -->
+        <div class="space-y-12 fade-in">
+            <h2 class="text-2xl font-display text-text-dark">Írj nekünk üzenetet</h2>
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Név</label>
+                        <input type="text" class="w-full bg-beige/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="Teljes neved" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">E-mail</label>
+                        <input type="email" class="w-full bg-beige/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-mocha outline-none" placeholder="Email címed" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Üzenet tárgya</label>
+                    <select class="w-full bg-beige/50 border-none px-4 py-3 text-sm focus:ring-1 focus:ring-mocha outline-none h-12">
+                        <option>Esküvői dekoráció árajánlat</option>
+                        <option>Egyéb rendezvény</option>
+                        <option>Bérlés</option>
+                        <option>Sóskút Fogadó érdeklődés</option>
+                        <option>Egyéb</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest font-bold text-mocha">Üzenet</label>
+                    <textarea class="w-full bg-beige/50 border-none px-4 py-4 text-sm focus:ring-1 focus:ring-mocha outline-none min-h-[200px]" placeholder="Hogyan segíthetünk?"></textarea>
+                </div>
+                <button type="submit" class="bg-mocha text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-mocha-dark transition-all">Üzenet küldése</button>
+            </form>
+        </div>
+
+        <!-- Contact Info & Map -->
+        <div class="space-y-16 fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-sm uppercase tracking-widest font-bold text-mocha">Esküvő & Dekoráció</h3>
+                    <div class="space-y-2 text-sm text-text-muted">
+                        <p class="font-display text-lg text-text-dark">Nagy Emese T.</p>
+                        <p><a href="tel:+40774546085" class="hover:text-terracotta underline">+40 774 546 085</a></p>
+                        <p><a href="mailto:nemeset@gmail.com" class="hover:text-terracotta underline">nemeset@gmail.com</a></p>
+                        <p>Székelykeresztúr, Erdély</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-sm uppercase tracking-widest font-bold text-mocha">Sóskút Fogadó</h3>
+                    <div class="space-y-2 text-sm text-text-muted">
+                        <p class="font-display text-lg text-text-dark">Fazakas Attila</p>
+                        <p><a href="tel:+40741430904" class="hover:text-terracotta underline">+40 741 430 904</a></p>
+                        <p>2038 Sóskút, Temető utca 41.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-[400px] w-full bg-beige relative overflow-hidden flex items-center justify-center">
+                <!-- Map Placeholder -->
+                <p class="text-[10px] uppercase tracking-widest text-text-muted">Interaktív Térkép Helye</p>
+                <div class="absolute inset-0 grayscale opacity-50 bg-[url('https://picsum.photos/seed/map/1000/1000')] bg-cover"></div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
