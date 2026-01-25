@@ -68,16 +68,72 @@ const menuItems = [
     ))}
   </div>
 
-  <!-- Mobile Menu Button (Placeholder) -->
-  <button id="mobile-menu-btn" class="lg:hidden absolute left-5 text-xl">
-    <i class="fas fa-bars"></i>
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-open" class="lg:hidden absolute left-5 text-xl p-2" aria-label="Menu megnyitása">
+    <i class="fas fa-bars text-text-dark"></i>
   </button>
   
-  <div class="lg:hidden font-display text-lg tracking-widest">EVENTBOX</div>
+  <div class="lg:hidden font-display text-lg tracking-widest text-[#3D352E]">EVENTBOX</div>
 </nav>
+
+<!-- Mobile Overlay Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform -translate-x-full transition-transform duration-500 lg:hidden">
+  <div class="p-5 flex flex-col h-full">
+    <div class="flex justify-between items-center mb-10">
+      <div class="font-display text-lg tracking-widest">EVENTBOX</div>
+      <button id="mobile-menu-close" class="text-2xl p-2" aria-label="Menu bezárása">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="flex-1 overflow-y-auto">
+      <ul class="space-y-6">
+        {menuItems.map(item => (
+          <li class="space-y-4">
+            <a href={item.href} class="mobile-link text-lg font-display uppercase tracking-widest text-text-dark block border-b border-beige pb-2">
+              {item.label}
+            </a>
+            {item.children && (
+              <ul class="pl-4 space-y-3 border-l border-beige ml-2">
+                {item.children.map(child => (
+                  <li>
+                    <a href={child.href} class="mobile-link text-xs uppercase tracking-widest text-text-muted hover:text-terracotta">
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="h-20"></div>
 
 <script>
-  // Simple mobile menu toggle logic could go here
+  const openBtn = document.getElementById('mobile-menu-open');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const menu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  const openMenu = () => {
+    menu?.classList.remove('-translate-x-full');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    menu?.classList.add('-translate-x-full');
+    document.body.style.overflow = '';
+  };
+
+  openBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 </script>
