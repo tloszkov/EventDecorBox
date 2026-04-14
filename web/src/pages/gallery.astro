@@ -3,7 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const couples = [
+const featuredWeddings = [
+  { name: "Andi és Norbi", year: 2025, img: "/images/gallery/andi-norbi (1).jpg" },
+  { name: "Ági és Barni", year: 2025, img: "/images/gallery/ági-barni (1).jpg" },
+  { name: "Andi és Peti", year: 2025, img: "/images/gallery/andi-peti (11).jpg" },
+  { name: "Saci és Zsolt", year: 2025, img: "/images/gallery/saci-zsolt (1).jpg" },
+  { name: "Csenge és Zsolt", year: 2025, img: "/images/gallery/csenge-zsolt (1).jpg" },
+  { name: "Andi és Levente", year: 2024, img: "/images/gallery/andi-levente (1).jpg" },
+  { name: "Betti és Szilárd", year: 2024, img: "/images/gallery/szilard-betti (1).jpg" },
+  { name: "Szilvi és Levente", year: 2024, img: "/images/gallery/szilvi-levente (1).jpg" },
+  { name: "Bogi és Szabi", year: 2024, img: "/images/gallery/bogi-szabi (1).jpg" },
+  { name: "Orsi és Ricsi", year: 2024, img: "/images/gallery/orsi-ricsi (1).jpg" },
+];
+
+const allCouples = [
   "Bogi és Szabi", "Csenge és Zsolt", "Betti és Szili", "Szilvi és Levi",
   "Andrea és Norbert", "Orsi és Ricsi", "Andi és Peti", "Ági és Barni",
   "Andrea és Barna", "Andrea és Loránd", "Saci és Zsolt", "Emőke és Tamás",
@@ -16,30 +29,46 @@ const couples = [
 <Layout title="Munkáink | EventBox Decor">
   <Header />
   
-  <main class="py-24 px-5">
+  <main class="py-24 px-5 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20 space-y-4 fade-in">
-        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Referenciák</span>
-        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Munkáink</h1>
+        <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Portfólió</span>
+        <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Kiemelt Munkáink</h1>
         <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+        <p class="text-text-muted mt-6 italic text-sm">"Minden esküvőnek egyedi dekoráció jár – íme néhány kedvencünk a teljesség igénye nélkül."</p>
       </div>
 
-      <div id="eskuvok" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {couples.map((couple, index) => (
-          <div class="group fade-in">
-            <div class="aspect-[4/5] bg-beige overflow-hidden border border-beige relative">
-              <!-- Placeholder for images -->
-              <div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style={`background-image: url('https://picsum.photos/seed/${index + 10}/800/1000'); filter: sepia(0.1);`}></div>
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <span class="text-white text-xs uppercase tracking-[0.3em] font-bold border border-white px-6 py-3">Megtekintés</span>
+      <!-- Featured Grid -->
+      <div id="eskuvok" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-32">
+        {featuredWeddings.map((wedding) => (
+          <div class="group fade-in cursor-pointer">
+            <div class="aspect-[4/5] bg-beige overflow-hidden border border-beige relative shadow-sm">
+              <div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style={`background-image: url('${wedding.img}');`}></div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <span class="text-white text-[10px] uppercase tracking-[0.3em] font-bold border border-white px-8 py-3">Album megnyitása</span>
               </div>
             </div>
-            <div class="pt-6 text-center">
-              <h3 class="script-font text-3xl">{couple}</h3>
-              <p class="text-[10px] uppercase tracking-widest text-text-muted mt-2">Esküvői Dekoráció</p>
+            <div class="pt-8 text-center space-y-2">
+              <h3 class="script-font text-3xl">{wedding.name}</h3>
+              <p class="text-[10px] uppercase tracking-widest text-text-muted">{wedding.year}. Szezon</p>
             </div>
           </div>
         ))}
+      </div>
+
+      <!-- Simple List of More Couples -->
+      <div class="border-t border-beige pt-24">
+          <div class="text-center mb-16 space-y-4">
+              <h2 class="text-2xl font-display uppercase tracking-widest">További Referenciáink</h2>
+              <p class="text-[10px] uppercase tracking-widest text-mocha font-bold">Akikkel az elmúlt években együtt dolgoztunk</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {allCouples.map(couple => (
+                  <div class="text-center py-4 border border-beige/30 text-[11px] uppercase tracking-widest text-text-muted hover:text-terracotta transition-colors">
+                      {couple}
+                  </div>
+              ))}
+          </div>
       </div>
     </div>
   </main>

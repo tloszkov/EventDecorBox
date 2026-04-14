@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="ZuzmóArt | EventBox Decor">
+  <Header />
+  
+  <main class="bg-white">
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1541829070764-84a7d30dee70?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-mocha/20"></div>
+        </div>
+        <div class="relative z-10 text-center text-white space-y-4 px-5">
+            <span class="text-[10px] uppercase tracking-[0.5em] font-bold">Természetes Elegancia</span>
+            <h1 class="text-5xl md:text-7xl font-display uppercase tracking-widest">ZuzmóArt</h1>
+            <p class="max-w-xl mx-auto text-sm md:text-base opacity-90 italic">"Kézzel készült, tartós és gondozásmentes lakásdekorációk izlandi zuzmóból."</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-24 px-5 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Mi is az a zuzmó?</span>
+                    <h2 class="text-3xl md:text-4xl font-display text-text-dark">A természet érintése, gondozás nélkül</h2>
+                    <div class="w-12 h-[1px] bg-terracotta"></div>
+                </div>
+                <div class="prose prose-mocha text-text-muted leading-relaxed">
+                    <p>
+                        A <strong>tartósított izlandi zuzmó</strong> különleges, természetes anyag – sem nem élő, sem nem mű. Az eredetileg fehér színű zuzmót glicerinnel tartósítják, majd ételfestékkel színezik különböző árnyalatokra.
+                    </p>
+                    <p>
+                        Ez az eljárás 100%-ban környezetbarát és egészségre ártalmatlan, miközben megőrzi a növény puhaságát és természetes textúráját hosszú éveken keresztül.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 pt-4">
+                    <div class="space-y-2">
+                        <i class="fas fa-tint-slash text-terracotta"></i>
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold">Nulla Öntözés</h4>
+                        <p class="text-[11px] text-text-muted">Nem igényel vizet, így sosem szárad ki.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <i class="fas fa-sun text-terracotta"></i>
+                        <h4 class="text-[10px] uppercase tracking-widest font-bold">Fénymentes</h4>
+                        <p class="text-[11px] text-text-muted">Sötétebb helyiségekben, akár a fürdőben is jól érzi magát.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-square bg-beige rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1621274403997-37aae1831820?q=80&w=2071&auto=format&fit=crop" alt="Lichen Texture" class="w-full h-full object-cover" />
+                </div>
+                <div class="absolute -bottom-10 -left-10 bg-mocha text-white p-8 max-w-[240px] hidden md:block">
+                    <p class="text-xs italic">"Bár a zuzmó már nem élő növény, mégis élő hatást kelt, mert a levegő páratartalmából nyeri a nedvességet."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="py-24 bg-beige/20 px-5">
+        <div class="max-w-6xl mx-auto space-y-20">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-display uppercase tracking-widest">Zuzmós Alkotások</h2>
+                <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Szerelemfa -->
+                <div class="space-y-6 group">
+                    <div class="aspect-square overflow-hidden bg-white shadow-lg">
+                        <img src="/images/ui/esketőterem (1).jpg" alt="Zuzmó Szerelemfa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-display">A Szerelemfa</h3>
+                        <p class="text-sm text-text-muted italic">A 80 cm-es izlandi zuzmós szimbolikus alkotás, amely az esketőterem központi díszeként az összetartozást hirdeti.</p>
+                    </div>
+                </div>
+
+                <!-- Irodai Dekoráció -->
+                <div class="space-y-6 group">
+                    <div class="aspect-square overflow-hidden bg-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Business Moss Decor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-display">Üzleti Dekoráció</h3>
+                        <p class="text-sm text-text-muted italic">Készítünk zuzmólogókat, faliképeket, órákat és faldekorokat – mindent, ami természetes eleganciát visz a munkahelyre.</p>
+                    </div>
+                </div>
+
+                <!-- Otthoni Kiegészítők -->
+                <div class="space-y-6 group">
+                    <div class="aspect-square overflow-hidden bg-white shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1854&auto=format&fit=crop" alt="Home Moss Decor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-display">Otthoni Emlékek</h3>
+                        <p class="text-sm text-text-muted italic">Kisebb, kedvezőbb árú darabok is elérhetők kollekciónkban, melyek természetes kiegészítőkkel vannak díszítve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="py-24 px-5 max-w-4xl mx-auto text-center space-y-12">
+        <h2 class="text-2xl md:text-3xl font-display uppercase tracking-widest">Miért válaszd a zuzmót?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+            <div class="flex gap-4">
+                <span class="text-terracotta font-bold text-xl">01.</span>
+                <p class="text-sm text-text-muted"><span class="font-bold text-text-dark">Páratartalom szabályozás:</span> Segít kiegyenlíteni a helyiség páraszintjét.</p>
+            </div>
+            <div class="flex gap-4">
+                <span class="text-terracotta font-bold text-xl">02.</span>
+                <p class="text-sm text-text-muted"><span class="font-bold text-text-dark">Antiallergén:</span> Nem vonzza a port és taszítja a rovarokat.</p>
+            </div>
+            <div class="flex gap-4">
+                <span class="text-terracotta font-bold text-xl">03.</span>
+                <p class="text-sm text-text-muted"><span class="font-bold text-text-dark">Akusztikai hatás:</span> Kiváló hangszigetelő és elnyeli a visszhangot.</p>
+            </div>
+            <div class="flex gap-4">
+                <span class="text-terracotta font-bold text-xl">04.</span>
+                <p class="text-sm text-text-muted"><span class="font-bold text-text-dark">100% Természetes:</span> Fenntartható módon gyűjtött és biológiailag lebomló.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-mocha text-white text-center px-5">
+        <div class="max-w-2xl mx-auto space-y-8">
+            <h2 class="text-3xl font-display uppercase tracking-widest">Saját zuzmós dekorációt szeretnél?</h2>
+            <p class="opacity-80 text-sm leading-relaxed">Legyen szó faliképről, tükörről vagy különleges dísztárgyról a fürdőszobába – keress bátran, és megvalósítjuk!</p>
+            <div class="pt-4">
+                 <a href="/kapcsolat" class="inline-block border border-white px-10 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-mocha transition-all duration-500">Kérj Ajánlatot</a>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

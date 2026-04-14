@@ -11,16 +11,15 @@ import Footer from '../components/Footer.astro';
 		<!-- Hero Section -->
 		<section class="relative h-[85vh] flex flex-col items-center justify-center text-center px-5">
 			<div class="absolute inset-0 z-0">
-				<!-- In a real app we'd use a real image here -->
 				<div class="w-full h-full bg-beige/50 bg-[url('/hero-bg.jpg')] bg-cover bg-center"></div>
-				<div class="absolute inset-0 bg-white/20"></div>
+				<div class="absolute inset-0 bg-white/10"></div>
 			</div>
 			
 			<div class="relative z-10 space-y-4 fade-in">
-				<h1 class="script-font text-5xl md:text-7xl lg:text-8xl">EventBox Decor</h1>
-				<p class="text-xs md:text-sm tracking-[0.5em] uppercase font-medium">Esküvő • Harmónia • Stílus</p>
-				<div class="pt-8">
-					<a href="#katalogus" class="bg-mocha text-white px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-mocha-dark transition-all duration-300 inline-block">
+				<h1 class="script-font text-6xl md:text-8xl lg:text-9xl mb-4">EventBox Decor</h1>
+				<p class="text-[10px] md:text-xs tracking-[0.6em] uppercase font-bold text-mocha">Esküvő • Harmónia • Stílus</p>
+				<div class="pt-12">
+					<a href="/gallery" class="border border-mocha text-mocha px-10 py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-mocha hover:text-white transition-all duration-500 inline-block">
 						Ismerd meg munkáinkat
 					</a>
 				</div>
@@ -28,132 +27,167 @@ import Footer from '../components/Footer.astro';
 		</section>
 
 		<!-- Bemutatkozás -->
-		<section id="about" class="py-24 px-5">
-			<div class="max-w-4xl mx-auto text-center space-y-12">
-				<div class="space-y-4 fade-in">
-					<span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Történetünk</span>
-					<h2 class="text-3xl md:text-4xl font-display">Bemutatkozás</h2>
-					<div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
-				</div>
-				
-				<div class="space-y-8 text-text-muted leading-relaxed fade-in max-w-3xl mx-auto">
-					<p class="text-lg italic font-display">
-						"Nagy Emese vagyok, az EventBox Decor megálmodója és tulajdonosa."
-					</p>
-					<p>
-						Erdélyi történetem akkor kezdődött, amikor korábbi munkám szüneteltetésével egy kis feltöltődésre indultam. Képesítéseimet ugyan a szociális szférában szereztem, az egyetemi évek után a pécsi civil szektorban kezdtem dolgozni, ahol pályázatírásba és művelődési házak működtetésébe, közösségi programok szervezésébe merültem el. Az évek során szakmai vezetőként tevékenykedtem, de úgy éreztem, ideje valami újba kezdenem – így jutottam el jónéhány elkötelezett év után Erdélybe, önkéntesként.
-					</p>
-					<p>
-						Eleinte csak rövid időre terveztem, de feladatot vállaltam egy hosszabb projektben is, egy helyi óvoda mindennapjaiban. Az önkéntes munka mellett felfedeztem a természetet, segítettem helyi gyógynövényeseknek, túráztam, és olyan helyekre is eljutottam, amiről nem is álmodtam volna. 12 önkéntes hónap után visszatérve Erdélybe, közösen vendéglátó vállalkozást indítottunk.
-					</p>
-					<p>
-						A díszítés iránti szenvedélyem hobbiként indult a Balaton-vidéken, majd 2017-től megrendelésre is vállaltam kisebb rendezvényeket saját helyszínünkön. 2022-től pedig főleg kiszállásban díszítek nagyobb eseményeket. Megszereztem az esküvői dekoratőr képesítést is, amivel egy régi álmom vált valóra: már azzal foglalkozom, amit a legjobban szeretek!
-					</p>
-					<p class="font-medium text-text-dark">
-						Folyamatosan képzem magam, hogy a Ti Nagy Napotokon a legjobbat nyújthassam. Hiszen a tökéletes alkotásra csak egyetlen lehetőségem van.
-					</p>
+		<section id="about" class="py-32 px-5 bg-white">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+					<div class="relative fade-in">
+						<div class="aspect-[4/5] overflow-hidden bg-beige border border-beige">
+							<img src="/images/ui/bemutatkozás.jpg" alt="Nagy Emese - EventBox Decor" class="w-full h-full object-cover" />
+						</div>
+						<div class="absolute -bottom-10 -right-10 hidden md:block w-64 h-64 bg-mocha/5 -z-10 border border-mocha/10"></div>
+					</div>
+					
+					<div class="space-y-10 fade-in">
+						<div class="space-y-4">
+							<span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Történetünk</span>
+							<h2 class="text-4xl md:text-5xl font-display text-text-dark">Bemutatkozás</h2>
+							<div class="w-12 h-[1px] bg-terracotta"></div>
+						</div>
+						
+						<div class="space-y-6 text-text-muted leading-relaxed text-sm md:text-base">
+							<p class="text-xl italic font-display text-text-dark">
+								"Nagy Emese vagyok, az EventBox Decor megálmodója és tulajdonosa."
+							</p>
+							<p>
+								Erdélyi történetem akkor kezdődött, amikor korábbi munkám szüneteltetésével egy kis feltöltődésre indultam. Képesítéseimet ugyan a szociális szférában szereztem, az egyetemi évek után a pécsi civil szektorban kezdtem dolgozni, ahol pályázatírásba és közösségi programok szervezésébe merültem el. 
+							</p>
+							<p>
+								Jónéhány elkötelezett év után érkeztem Erdélybe önkéntesként. A 12 önkéntes hónap alatt megismerkedtem székely párommal, és közösen vendéglátó vállalkozást indítottunk.
+							</p>
+							<p>
+								A díszítés iránti szenvedélyem hobbiként indult, majd 2022-től már főleg kiszállásban díszítek nagyobb eseményeket. Megszereztem az esküvői dekoratőr képesítést is, amivel egy régi álmom vált valóra: már azzal foglalkozom, amit a legjobban szeretek!
+							</p>
+							
+							<div class="pt-6 space-y-4">
+								<p class="font-bold text-text-dark uppercase tracking-widest text-[10px]">Nagy Emese T.</p>
+								<img src="/images/ui/szkennelt aláírás, nagy.tif" alt="Aláírás" class="h-12 opacity-80 grayscale" onerror="this.style.display='none'" />
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Katalógus Banner (Hangsúlyos) -->
-		<section id="katalogus" class="bg-mocha py-32 px-5 text-white">
-			<div class="max-w-4xl mx-auto text-center space-y-10 fade-in">
-				<span class="text-[10px] uppercase tracking-[0.5em] font-semibold text-white/80">Inspiráció & Tervezés</span>
-				<h2 class="text-4xl md:text-5xl font-display leading-tight">Ingyenes Esküvői Dekorációs Katalógus</h2>
-				<p class="text-white/80 max-w-2xl mx-auto leading-relaxed">
+		<!-- Katalógus Banner -->
+		<section id="katalogus" class="bg-beige/40 py-32 px-5">
+			<div class="max-w-4xl mx-auto text-center space-y-12 fade-in">
+				<span class="text-[10px] uppercase tracking-[0.5em] font-semibold text-mocha">Inspiráció & Tervezés</span>
+				<h2 class="text-4xl md:text-5xl font-display leading-tight text-text-dark">Ingyenes Esküvői Dekorációs Katalógus</h2>
+				<p class="text-text-muted max-w-2xl mx-auto leading-relaxed italic">
 					Katalógusunkban részletesen olvashatsz rólunk, a munkánk menetéről, és az egyes dekorációs elemekről irányárakkal együtt.
 				</p>
-				<div class="pt-6">
-					<button class="bg-white text-mocha px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:shadow-2xl transition-all duration-500">
+				<div class="pt-6 flex flex-col md:flex-row gap-6 justify-center items-center">
+					<img src="/images/ui/katalógus.png" alt="Katalógus borító" class="h-48 shadow-xl mb-4 md:mb-0" />
+					<button class="bg-mocha text-white px-12 py-5 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-mocha-dark transition-all duration-500 shadow-lg">
 						Kérem a katalógust
 					</button>
 				</div>
 			</div>
 		</section>
 
-		<!-- Referenciák Ízelítő (Kártyák) -->
-		<section id="munkaink" class="py-24 px-5 bg-white">
+		<!-- Referenciák Ízelítő -->
+		<section id="munkaink" class="py-32 px-5 bg-white">
 			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-20 space-y-4 fade-in">
-					<h2 class="text-3xl font-display uppercase tracking-widest">Legutóbbi Esküvők</h2>
+				<div class="text-center mb-24 space-y-4 fade-in">
+					<span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Portfólió</span>
+					<h2 class="text-3xl md:text-4xl font-display uppercase tracking-widest">Legutóbbi Esküvők</h2>
 					<div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
 					<!-- Ref 1 -->
 					<div class="group cursor-pointer fade-in">
-						<div class="aspect-[3/4] overflow-hidden bg-beige border border-beige relative">
-							<!-- Image placeholder -->
-							<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style="background-image: url('/ref1.jpg');"></div>
-							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+						<div class="aspect-[4/5] overflow-hidden bg-beige border border-beige relative">
+							<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style="background-image: url('/images/gallery/andi-norbi (1).jpg');"></div>
+							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+								<span class="text-white text-[10px] uppercase tracking-[0.3em] border border-white px-6 py-3">Megtekintés</span>
+							</div>
 						</div>
 						<div class="py-8 text-center space-y-2">
-							<h3 class="script-font text-3xl">Szilvi & Levi</h3>
-							<p class="text-[10px] uppercase tracking-widest text-text-muted">2024. Augusztus</p>
+							<h3 class="script-font text-3xl">Andi & Norbi</h3>
+							<p class="text-[10px] uppercase tracking-widest text-text-muted">2025. Július</p>
 						</div>
 					</div>
 
 					<!-- Ref 2 -->
 					<div class="group cursor-pointer fade-in">
-						<div class="aspect-[3/4] overflow-hidden bg-beige border border-beige relative">
-							<!-- Image placeholder -->
-							<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style="background-image: url('/ref2.jpg');"></div>
-							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+						<div class="aspect-[4/5] overflow-hidden bg-beige border border-beige relative">
+							<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style="background-image: url('/images/gallery/ági-barni (1).jpg');"></div>
+							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+								<span class="text-white text-[10px] uppercase tracking-[0.3em] border border-white px-6 py-3">Megtekintés</span>
+							</div>
 						</div>
 						<div class="py-8 text-center space-y-2">
-							<h3 class="script-font text-3xl">Csenge & Zsolt</h3>
-							<p class="text-[10px] uppercase tracking-widest text-text-muted">2024. Július</p>
+							<h3 class="script-font text-3xl">Ági & Barni</h3>
+							<p class="text-[10px] uppercase tracking-widest text-text-muted">2025. Szeptember</p>
 						</div>
 					</div>
 
 					<!-- Ref 3 -->
 					<div class="group cursor-pointer fade-in">
-						<div class="aspect-[3/4] overflow-hidden bg-beige border border-beige relative">
-							<!-- Image placeholder -->
-							<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style="background-image: url('/ref3.jpg');"></div>
-							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+						<div class="aspect-[4/5] overflow-hidden bg-beige border border-beige relative">
+							<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style="background-image: url('/images/gallery/andi-peti (11).jpg');"></div>
+							<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+								<span class="text-white text-[10px] uppercase tracking-[0.3em] border border-white px-6 py-3">Megtekintés</span>
+							</div>
 						</div>
 						<div class="py-8 text-center space-y-2">
-							<h3 class="script-font text-3xl">Ági & Barni</h3>
-							<p class="text-[10px] uppercase tracking-widest text-text-muted">2024. Szeptember</p>
+							<h3 class="script-font text-3xl">Andi & Peti</h3>
+							<p class="text-[10px] uppercase tracking-widest text-text-muted">2025. Augusztus</p>
 						</div>
 					</div>
 				</div>
 				
-				<div class="text-center mt-16">
-					<a href="/gallery" class="text-xs uppercase tracking-widest font-bold border-b border-terracotta pb-1 hover:text-terracotta transition-colors">
+				<div class="text-center mt-20">
+					<a href="/gallery" class="text-[10px] uppercase tracking-widest font-bold border-b border-terracotta pb-1 hover:text-terracotta transition-colors">
 						Nézd meg az összes referenciát →
 					</a>
 				</div>
 			</div>
 		</section>
+
 		<!-- Ajánlások -->
-		<section id="ajanlasok" class="py-24 px-5 bg-beige/30">
+		<section id="ajanlasok" class="py-32 px-5 bg-beige/10">
 			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16 space-y-4 fade-in">
+				<div class="text-center mb-24 space-y-6 fade-in">
 					<span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Visszajelzések</span>
-					<h2 class="text-3xl font-display uppercase tracking-widest">Akik már velünk álmodtak</h2>
+					<h2 class="text-4xl font-display uppercase tracking-widest">Akik már velünk álmodtak</h2>
 					<div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+					<p class="text-text-muted italic text-sm max-w-2xl mx-auto">"Küldetésem, hogy a várakozásaitokat túlszárnyalva alakítsam ki az esemény tökéletes atmoszféráját."</p>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-					<div class="space-y-6 text-center fade-in">
-						<div class="text-terracotta opacity-20 text-6xl font-display">“</div>
-						<p class="text-text-muted italic leading-relaxed">"Nem csalódtam. Emese teljes mértékben segített abban, hogy a végén minden csodálatos legyen! Visszafogott mégis elegáns és kifinomult dekorációt rakott össze."</p>
-						<h3 class="script-font text-3xl">Szilvi és Levi</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+					<div class="bg-white p-10 shadow-sm space-y-8 text-center fade-in border border-beige/30">
+						<div class="text-terracotta/20 text-6xl font-display -mb-4">“</div>
+						<p class="text-text-muted italic leading-relaxed text-sm">"Nem csalódtam. Emese teljes mértékben segített abban, hogy a végén minden csodálatos legyen! Visszafogott mégis elegáns és kifinomult dekorációt rakott össze."</p>
+						<div class="space-y-4">
+							<div class="w-16 h-16 rounded-full bg-beige mx-auto overflow-hidden">
+								<img src="/images/testimonials/sz+l_kreativ-162.jpg" alt="Reviewer" class="w-full h-full object-cover" />
+							</div>
+							<h3 class="script-font text-3xl">Szilvi és Levi</h3>
+						</div>
 					</div>
 
-					<div class="space-y-6 text-center fade-in">
-						<div class="text-terracotta opacity-20 text-6xl font-display">“</div>
-						<p class="text-text-muted italic leading-relaxed">"A végeredmény sokkal-sokkal csodásabb és színesebb lett, mint az évek során kreált Pinterest boardom. Köszönöm, hogy a történetünk része lettél!"</p>
-						<h3 class="script-font text-3xl">Ági és Barni</h3>
+					<div class="bg-white p-10 shadow-sm space-y-8 text-center fade-in border border-beige/30">
+						<div class="text-terracotta/20 text-6xl font-display -mb-4">“</div>
+						<p class="text-text-muted italic leading-relaxed text-sm">"A végeredmény sokkal-sokkal csodásabb és színesebb lett, mint az évek során kreált Pinterest boardom. Köszönöm, hogy a történetünk része lettél!"</p>
+						<div class="space-y-4">
+							<div class="w-16 h-16 rounded-full bg-beige mx-auto overflow-hidden">
+								<img src="/images/testimonials/ági-barni (1).jpg" alt="Reviewer" class="w-full h-full object-cover" />
+							</div>
+							<h3 class="script-font text-3xl">Ági és Barni</h3>
+						</div>
 					</div>
 
-					<div class="space-y-6 text-center fade-in">
-						<div class="text-terracotta opacity-20 text-6xl font-display">“</div>
-						<p class="text-text-muted italic leading-relaxed">"Odaadás, szenvedély, hivatás. Szívből csinálja amit csinál és ez minden munkáján meglátszik. Rengeteg szuper ötlete van, szívből ajánlom őt!"</p>
-						<h3 class="script-font text-3xl">Saci és Zsolt</h3>
+					<div class="bg-white p-10 shadow-sm space-y-8 text-center fade-in border border-beige/30">
+						<div class="text-terracotta/20 text-6xl font-display -mb-4">“</div>
+						<p class="text-text-muted italic leading-relaxed text-sm">"Odaadás, szenvedély, hivatás. Szívből csinálja amit csinál és ez minden munkáján meglátszik. Rengeteg szuper ötlete van, szívből ajánlom őt!"</p>
+						<div class="space-y-4">
+							<div class="w-16 h-16 rounded-full bg-beige mx-auto overflow-hidden">
+								<img src="/images/testimonials/saci és zsolt.jpg" alt="Reviewer" class="w-full h-full object-cover" onerror="this.src='/images/testimonials/DSC_1089.JPG'" />
+							</div>
+							<h3 class="script-font text-3xl">Saci és Zsolt</h3>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -6,22 +6,31 @@ const menuItems = [
     href: '/gallery',
     children: [
       { label: 'Esküvők', href: '/gallery#eskuvok' },
-      { label: 'Rendezvények', href: '/rendezvenyek' },
-      { label: 'Katalógus', href: '/katalogus' },
+      { label: 'ZuzmóArt', href: '/zuzmo' },
+      { label: 'Különleges Projektek', href: '/projektek' },
       { label: 'Ajánlások', href: '/#ajanlasok' },
       { label: 'Árajánlatkérés', href: '/kapcsolat' },
-      { label: 'Különleges Projektek', href: '/projektek' },
     ]
   },
   { 
     label: 'Esküvői Kisokos', 
     href: '/kisokos',
     children: [
-      { label: 'Idei Trendek', href: '/kisokos#trendek' },
-      { label: 'Mit kell tudnod?', href: '/kisokos#tudnivalok' },
-      { label: 'Stílusok', href: '/kisokos#stilusok' },
+      { label: 'Árképzés', href: '/kisokos#arak' },
+      { label: 'Milyen stílusban?', href: '/kisokos#stilus' },
+      { label: 'Színválasztás', href: '/kisokos#szinvalasztas' },
+      { label: 'Költségvetés', href: '/kisokos#koltsegvetes' },
       { label: 'Csekklista', href: '/kisokos#csekklista' },
-      { label: 'Hogyan dolgozom?', href: '/kisokos#folyamat' },
+      { label: 'A folyamat', href: '/kisokos#folyamat' },
+    ]
+  },
+  { 
+    label: 'Sóskút Fogadó', 
+    href: '/vendeglatas',
+    children: [
+      { label: 'A Helyszín', href: '/vendeglatas#soskut' },
+      { label: 'Filozófiánk', href: '/vendeglatas#rolunk' },
+      { label: 'Elhelyezkedés', href: '/vendeglatas#elhelyezkedes' },
     ]
   },
   { 
@@ -34,70 +43,90 @@ const menuItems = [
       { label: 'Fenyőtermesztés', href: '/fenyo' },
     ]
   },
-  { 
-    label: 'Vendéglátás', 
-    href: '/vendeglatas',
-    children: [
-      { label: 'Sóskút Fogadó', href: '/vendeglatas#soskut' },
-      { label: '(Panzió)', href: '/vendeglatas#panzio' },
-    ]
-  },
   { label: 'Blog', href: '/blog' },
-  { label: 'Kapcsolat', href: '/kapcsolat' },
+  { label: 'Elérhetőség', href: '/kapcsolat' },
 ];
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-beige h-20 flex items-center justify-center">
-  <div class="hidden lg:flex gap-8">
-    {menuItems.map(item => (
-      <div class="relative group h-20 flex items-center">
-        <a href={item.href} class="text-xs font-semibold uppercase tracking-widest text-text-dark hover:text-terracotta transition-colors py-2">
-          {item.label}
-        </a>
-        
-        {item.children && (
-          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[220px] shadow-xl border border-beige py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-            {item.children.map(child => (
-              <a href={child.href} class="block px-6 py-2 text-[10px] uppercase tracking-widest text-text-muted hover:text-terracotta hover:bg-beige transition-colors text-center">
-                {child.label}
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    ))}
-  </div>
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-beige h-24 flex items-center shadow-sm">
+  <div class="max-w-7xl mx-auto w-full px-5 flex items-center justify-between">
+    
+    <!-- Left Menu (Desktop) -->
+    <div class="hidden lg:flex gap-8 flex-1">
+      {menuItems.slice(0, 3).map(item => (
+        <div class="relative group py-4">
+          <a href={item.href} class="text-[10px] font-bold uppercase tracking-[0.2em] text-text-dark hover:text-terracotta transition-colors">
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="absolute top-full left-0 bg-white min-w-[200px] shadow-2xl border border-beige py-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              {item.children.map(child => (
+                <a href={child.href} class="block px-8 py-2 text-[9px] uppercase tracking-widest text-text-muted hover:text-terracotta transition-colors">
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
 
-  <!-- Mobile Menu Button -->
-  <button id="mobile-menu-open" class="lg:hidden absolute left-5 text-xl p-2" aria-label="Menu megnyitása">
-    <i class="fas fa-bars text-text-dark"></i>
-  </button>
-  
-  <div class="lg:hidden font-display text-lg tracking-widest text-[#3D352E]">EVENTBOX</div>
+    <!-- Center Logo -->
+    <div class="flex-shrink-0 px-10">
+      <a href="/" class="block">
+        <img src="/logo.svg" alt="EventBox Decor" class="h-16 w-auto" />
+      </a>
+    </div>
+
+    <!-- Right Menu (Desktop) -->
+    <div class="hidden lg:flex gap-8 flex-1 justify-end">
+      {menuItems.slice(3).map(item => (
+        <div class="relative group py-4 text-right">
+          <a href={item.href} class="text-[10px] font-bold uppercase tracking-[0.2em] text-text-dark hover:text-terracotta transition-colors">
+            {item.label}
+          </a>
+          {item.children && (
+            <div class="absolute top-full right-0 bg-white min-w-[200px] shadow-2xl border border-beige py-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              {item.children.map(child => (
+                <a href={child.href} class="block px-8 py-2 text-[9px] uppercase tracking-widest text-text-muted hover:text-terracotta transition-colors">
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-open" class="lg:hidden p-2" aria-label="Menu megnyitása">
+      <i class="fas fa-bars text-xl text-text-dark"></i>
+    </button>
+  </div>
 </nav>
 
 <!-- Mobile Overlay Menu -->
-<div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform -translate-x-full transition-transform duration-500 lg:hidden">
-  <div class="p-5 flex flex-col h-full">
-    <div class="flex justify-between items-center mb-10">
-      <div class="font-display text-lg tracking-widest">EVENTBOX</div>
-      <button id="mobile-menu-close" class="text-2xl p-2" aria-label="Menu bezárása">
-        <i class="fas fa-times"></i>
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform -translate-x-full transition-transform duration-500 lg:hidden overflow-y-auto">
+  <div class="p-8 flex flex-col min-h-full">
+    <div class="flex justify-between items-center mb-16">
+      <img src="/logo.svg" alt="EventBox Decor" class="h-12" />
+      <button id="mobile-menu-close" class="p-2" aria-label="Menu bezárása">
+        <i class="fas fa-times text-2xl"></i>
       </button>
     </div>
     
-    <div class="flex-1 overflow-y-auto">
-      <ul class="space-y-6">
+    <div class="flex-1">
+      <ul class="space-y-8">
         {menuItems.map(item => (
           <li class="space-y-4">
-            <a href={item.href} class="mobile-link text-lg font-display uppercase tracking-widest text-text-dark block border-b border-beige pb-2">
+            <a href={item.href} class="mobile-link text-xl font-display uppercase tracking-widest text-text-dark block">
               {item.label}
             </a>
             {item.children && (
-              <ul class="pl-4 space-y-3 border-l border-beige ml-2">
+              <ul class="pl-4 space-y-4 border-l border-beige ml-1">
                 {item.children.map(child => (
                   <li>
-                    <a href={child.href} class="mobile-link text-xs uppercase tracking-widest text-text-muted hover:text-terracotta">
+                    <a href={child.href} class="mobile-link text-[10px] uppercase tracking-[0.2em] text-text-muted">
                       {child.label}
                     </a>
                   </li>
@@ -111,7 +140,7 @@ const menuItems = [
   </div>
 </div>
 
-<div class="h-20"></div>
+<div class="h-24"></div>
 
 <script>
   const openBtn = document.getElementById('mobile-menu-open');
@@ -132,7 +161,6 @@ const menuItems = [
   openBtn?.addEventListener('click', openMenu);
   closeBtn?.addEventListener('click', closeMenu);
   
-  // Close menu when clicking a link
   mobileLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });

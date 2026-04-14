@@ -8,52 +8,108 @@ import Footer from '../components/Footer.astro';
   <Header />
   
   <main class="py-24 px-5">
-    <div class="max-w-4xl mx-auto space-y-24">
+    <div class="max-w-5xl mx-auto space-y-32">
       
-      <div id="soskut" class="fade-in space-y-12">
-        <div class="text-center space-y-4">
-          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Helyszín</span>
-          <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest">Sóskút Fogadó</h1>
+      <!-- Section: Sóskút Fogadó Intro -->
+      <article id="soskut" class="fade-in space-y-12">
+        <div class="text-center space-y-6">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Történelmi Helyszín</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-widest text-[#3D352E]">Sóskút Fogadó</h1>
           <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
         </div>
 
-        <div class="aspect-video bg-beige overflow-hidden">
-             <!-- Placeholder -->
-            <div class="w-full h-full bg-[url('https://picsum.photos/seed/soskut/1200/800')] bg-cover bg-center"></div>
+        <div class="aspect-[21/9] bg-beige overflow-hidden shadow-sm">
+            <img src="/images/ui/keresztelő.jpg" alt="Sóskút Fogadó" class="w-full h-full object-cover" />
         </div>
 
-        <div class="prose prose-mocha max-w-none text-center space-y-8 text-text-muted leading-relaxed">
-          <h3 class="font-display italic normal-case text-2xl text-text-dark">Újjászületik egy régi legenda</h3>
-          <p>
-            Székelykeresztúr egykor nyüzsgő részén, Sóskúton állt egy vendéglő, ahol zajlott az élet: családi ebédek, ünnepek, baráti beszélgetések és felejthetetlen esték emlékei születtek itt. Az elmúlt 30 évben azonban az épület elcsendesedett és az enyészeté lett… most viszont <strong>új életre kel</strong>.
-          </p>
-          <p>
-            A jól ismert <strong>Fogadó Vendégház</strong> ebben az épületben talált új otthonra, és itt folytatjuk családi vállalkozásunkat, hű maradva a nevünkhöz és az épület múltjához. Így született meg a <strong>Sóskút Fogadó</strong>.
-          </p>
-          <p>
-            Hisszük, hogy a régi épületnek lelke van – és mi mindent megteszünk, hogy ebből minél többet megőrizzünk. Szeretnénk, ha a múlt történetei tovább élnének, találkozva a jövővel. Várunk benneteket bővülő kínálattal és a már jól ismert vendégszeretetünkkel egy olyan épületben, ami több mint 20 éve várta, hogy újra élettel teljen meg.
-          </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start pt-8">
+            <div class="space-y-8 prose prose-mocha text-text-muted leading-relaxed">
+                <h3 class="font-display italic normal-case text-3xl text-text-dark">Újjászületik egy régi legenda</h3>
+                <p>
+                    Székelykeresztúr egykor nyüzsgő részén, Sóskúton állt egy vendéglő, ahol zajlott az élet: családi ebédek, ünnepek, baráti beszélgetések és felejthetetlen esték emlékei születtek itt. Az elmúlt huszonévben azonban az épület elcsendesedett és az enyészeté lett… most viszont <strong>új életre kel</strong>.
+                </p>
+                <p>
+                    A jól ismert <strong>Fogadó Vendégház</strong> ebben az épületben talált új otthonra, és itt folytatjuk családi vállalkozásunkat, hű maradva a nevünkhöz és az épület múltjához. Hisszük, hogy a régi épületnek lelke van – és mi mindent megteszünk, hogy ebből minél többet megőrizzünk.
+                </p>
+            </div>
+            
+            <div class="bg-beige/20 p-10 space-y-8 border-l-2 border-terracotta">
+                <h4 class="text-xs uppercase tracking-widest font-bold text-mocha">Házunk filozófiája</h4>
+                <p class="text-sm text-text-muted leading-relaxed italic">
+                    "Egy ünnepi alkalom – legyen az esküvő, keresztelő, bármilyen családi esemény, vagy más különleges rendezvény – mindig emlékezetes pillanatokat rejt. Célunk, hogy ezek a pillanatok harmonikus környezetben, minőségi ízekkel és gondos odafigyeléssel váljanak teljessé."
+                </p>
+                <p class="text-sm text-text-muted">
+                    A rendezvény miliője éppúgy múlik a vendégek jó hangulatán, mint a helyszínen és a szervezésen.
+                </p>
+            </div>
         </div>
-      </div>
+      </article>
 
-      <div id="panzio" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in bg-beige/30 p-12">
-        <div class="space-y-6">
-            <h2 class="text-2xl font-display uppercase tracking-widest">Szállás & Panzió</h2>
-            <p class="text-sm text-text-muted leading-relaxed">
-                A Sóskút Fogadó nem csupán rendezvényhelyszín, hanem pihenőhely is egyben. 
-                Kényelmes szobáinkkal és a már jól ismert vendégszeretetünkkel várjuk a messziről érkezőket vagy a rendezvények után pihenni vágyó vendégeket.
-            </p>
-            <button class="text-xs font-bold uppercase tracking-widest border border-mocha px-8 py-3 hover:bg-mocha hover:text-white transition-all">Szobafoglalás</button>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="aspect-square bg-white shadow-lg overflow-hidden">
-                <div class="w-full h-full bg-[url('https://picsum.photos/seed/room1/400/400')] bg-cover bg-center"></div>
-            </div>
-            <div class="aspect-square bg-white shadow-lg overflow-hidden mt-8">
-                <div class="w-full h-full bg-[url('https://picsum.photos/seed/room2/400/400')] bg-cover bg-center"></div>
-            </div>
-        </div>
-      </div>
+      <!-- Section: Rólunk & Vendéglátás -->
+      <section id="rolunk" class="fade-in space-y-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div class="space-y-8">
+                  <h2 class="text-3xl font-display uppercase tracking-widest">Rólunk</h2>
+                  <p class="text-text-muted leading-relaxed">
+                      Hosszú évek után a Sóskút ikonikus épülete újra megnyitja kapuit, hogy a mi tapasztalatainkkal és a ti rendezvényeitekkel újra életre keltsük, és minden eseményt felejthetetlen élménnyé varázsoljunk.
+                  </p>
+                  <p class="text-text-muted leading-relaxed">
+                      Hamarosan az épület étteremként is megnyitja kapuit, 2027-től pedig szálláslehetőséggel bővülünk. Családosok számára külön öröm, hogy a jövőben játszóteret is tervezünk a legkisebbeknek.
+                  </p>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                  <div class="aspect-square bg-white shadow-lg overflow-hidden translate-y-8">
+                      <img src="https://picsum.photos/seed/food1/600/600" alt="Gasztronómia" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="aspect-square bg-white shadow-lg overflow-hidden">
+                      <img src="https://picsum.photos/seed/food2/600/600" alt="Vendéglátás" class="w-full h-full object-cover" />
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Section: Elhelyezkedés -->
+      <section id="elhelyezkedes" class="fade-in bg-white border border-beige p-10 md:p-20 shadow-sm space-y-12">
+          <div class="text-center space-y-4">
+              <h2 class="text-3xl font-display uppercase tracking-widest">Elhelyezkedés</h2>
+              <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div class="space-y-6">
+                  <p class="text-text-muted leading-relaxed">
+                      Az épület Székelykeresztúr Sóskúti részén, egy nyugodt, erdőszéli környezetben található, távol a város zajától, mégis beton úton könnyen megközelíthető.
+                  </p>
+                  <div class="space-y-4 pt-4">
+                      <div class="flex items-start gap-4">
+                          <i class="fas fa-map-marker-alt text-terracotta pt-1"></i>
+                          <div class="text-sm">
+                              <p class="font-bold">Cím:</p>
+                              <p class="text-text-muted">Székelykeresztúr, Sóskút utca 26., 535400, Hargita megye</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4">
+                          <i class="fas fa-location-arrow text-terracotta pt-1"></i>
+                          <div class="text-sm">
+                              <p class="font-bold">GPS koordináták:</p>
+                              <p class="text-text-muted">46.27034, 25.04044</p>
+                          </div>
+                      </div>
+                      <div class="flex items-start gap-4">
+                          <i class="fas fa-parking text-terracotta pt-1"></i>
+                          <div class="text-sm">
+                              <p class="font-bold">Parkolás:</p>
+                              <p class="text-text-muted">Saját parkolóhelyek a vendégek részére.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="aspect-video bg-beige grayscale opacity-80 border border-beige">
+                  <!-- Simplified map placeholder -->
+                  <div class="w-full h-full flex items-center justify-center text-[10px] uppercase tracking-widest text-text-muted">Térkép</div>
+              </div>
+          </div>
+      </section>
 
     </div>
   </main>

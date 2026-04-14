@@ -3,120 +3,302 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const sections = [
-  {
-    id: 'trendek',
-    title: 'Idei Trendek',
-    content: `
-      <ul>
-        <li><strong>Laza, természetes stílus:</strong> „mintha ott nőtt volna” hatás, sok zölddel</li>
-        <li><strong>Terrakotta, rozsda, púder, bézs, törtfehér árnyalatok:</strong> meleg, földközeli színek</li>
-        <li><strong>Kombinált anyagok:</strong> szárított + friss virágok bátran együtt</li>
-        <li><strong>Kisebb, de részletgazdag díszítések:</strong> minőség a mennyiség felett</li>
-      </ul>
-    `
-  },
-  {
-    id: 'tudnivalok',
-    title: 'Mit kell tudnod az esküvői dekorról?',
-    content: `
-      <p>Nos, nektek nem sokat, hogyha megfelelő dekoratőrre bízzátok a Nagy Napot! Hisz mindenki arra vágyik, hogy a készülődés stresszmentes legyen, az eredmény pedig tökéletes. Az alábbi szempontokat azonban érdemes átgondolnotok:</p>
-      <ul>
-        <li>A menyasszony és a vőlegény személyisége</li>
-        <li>A menyasszony külleme és a ruhák stílusa</li>
-        <li>Az életkor és a vendégsereg összetétele</li>
-        <li>A szertartás típusa (polgári és/vagy egyházi)</li>
-        <li>A helyszín típusa és hangulata</li>
-        <li><strong>Szezonalitás:</strong> A virágoknak szezonalitása van, a főszezonon kívüli típusok beszerzése nehezebb és költségesebb.</li>
-      </ul>
-    `
-  },
-  {
-    id: 'stilusok',
-    title: 'Stílusirányzatok',
-    content: `
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <li>Klaszikus elegáns</li>
-        <li>Romantikus-vintage</li>
-        <li>Natúr-rusztikus</li>
-        <li>Bohém-laza</li>
-        <li>Greenery</li>
-        <li>Modern, geometrikus</li>
-        <li>Falusias, hagyományőrző</li>
-        <li>Tematikus stílus</li>
-      </ul>
-    `
-  }
+const navItems = [
+  { id: 'arak', label: 'Árképzés' },
+  { id: 'stilus', label: 'Milyen stílusban?' },
+  { id: 'szinvalasztas', label: 'Színválasztás' },
+  { id: 'koltsegvetes', label: 'Költségvetés' },
+  { id: 'csekklista', label: 'Csekklista' },
+  { id: 'folyamat', label: 'A folyamat' },
 ];
 ---
 
 <Layout title="Esküvői Kisokos | EventBox Decor">
   <Header />
   
-  <main class="py-24 px-5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-20 space-y-4 fade-in">
+  <main class="py-24 px-5 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16 space-y-4 fade-in">
         <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Tanácsok & Ötletek</span>
         <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest text-[#3D352E]">Esküvői Kisokos</h1>
         <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
-        <p class="text-text-muted max-w-2xl mx-auto pt-4 italic">
+        <p class="text-text-muted max-w-2xl mx-auto pt-6 italic text-sm md:text-base">
             "Sokan, amikor elkezdik megálmodni az eseményük dekorációját, még nem tudják, mi minden tartozik bele, és milyen tényezők befolyásolják az árakat. Szeretnénk ebben segíteni – átláthatóan, őszintén és érthetően."
         </p>
       </div>
 
-      <div class="space-y-24">
-        <!-- Árakról -->
-        <div id="arak" class="fade-in scroll-mt-32">
-            <h2 class="text-2xl font-display mb-8 pb-4 border-b border-beige">A dekoráció ára</h2>
-            <div class="prose prose-mocha max-w-none text-text-muted leading-relaxed">
-                <p><strong>Röviden: az élővirág prémium kategória.</strong></p>
-                <p>Noha élővirágokkal dolgozunk, és hiszem, hogy ezek adják a legszebb hatást, fontos tudni, hogy ez nem az olcsó megoldás. A virág ára sok mindentől függ: szezon, típus, mennyiség, szín és a választott stílus.</p>
-                <p>Egy dekorációs projekt nem csak abból áll, hogy „pár virágot megkötünk”. A folyamat kreatív tervezést, beszerzést, napokig tartó előkészítést, szállítást, többórás helyszíni építést, majd bontást és utómunkát is magában foglal.</p>
-            </div>
-        </div>
+      <!-- Sticky Local Nav -->
+      <nav class="sticky top-20 z-40 bg-white/90 backdrop-blur-md py-4 mb-16 border-b border-beige flex justify-center overflow-x-auto">
+        <ul class="flex gap-6 md:gap-12 px-4 whitespace-nowrap">
+          {navItems.map(item => (
+            <li>
+              <a href={`#${item.id}`} class="text-[10px] uppercase tracking-widest font-bold text-text-muted hover:text-terracotta transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-        {sections.map(section => (
-          <div id={section.id} class="fade-in scroll-mt-32">
-            <h2 class="text-2xl font-display mb-8 pb-4 border-b border-beige">{section.title}</h2>
-            <div class="prose prose-mocha max-w-none text-text-muted leading-relaxed" set:html={section.content}></div>
-          </div>
-        ))}
+      <div class="max-w-4xl mx-auto space-y-32">
         
-        <div id="csekklista" class="fade-in scroll-mt-32 bg-beige/50 p-12">
-            <h2 class="text-2xl font-display mb-8">A Csekklista</h2>
-            <p class="mb-8 text-sm uppercase tracking-widest text-mocha font-semibold">Avagy mennyi mindent szokás dekorálni:</p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-sm text-text-muted">
-                <li>Menyasszonyi csokor & Dobócsokor</li>
-                <li>Koszorúslányok csokrai</li>
-                <li>Szülők köszöntő csokrai</li>
-                <li>Kitűzők vőlegénynek és vendégeknek</li>
-                <li>Virágékszerek (csuklóra, hajba)</li>
-                <li>Autó dekoráció</li>
-                <li>Asztaldísz a főasztalra & Vendégasztalok díszei</li>
-                <li>Bejárat & Székek díszítése</li>
-                <li>Boldogságkapu</li>
-                <li>Templomi szertartás: főoltár és padok</li>
-            </ul>
-        </div>
+        <!-- Section: Árakról -->
+        <section id="arak" class="fade-in scroll-mt-32 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-display text-text-dark">A dekoráció ára</h2>
+                    <div class="w-8 h-[1px] bg-terracotta"></div>
+                    <div class="prose prose-mocha text-text-muted">
+                        <p><strong>Röviden: az élővirág prémium kategória.</strong></p>
+                        <p>Noha élővirágokkal dolgozunk, és hiszem, hogy ezek adják a legszebb hatást, fontos tudni, hogy ez nem az olcsó megoldás. A virág ára sok mindentől függ: szezon, típus, mennyiség, szín és a választott stílus.</p>
+                        <p>Egy dekorációs projekt nem csak abból áll, hogy „pár virágot megkötünk”. A folyamat kreatív tervezést, beszerzést, napokig tartó előkészítést, szállítást, többórás helyszíni építést, majd bontást és utómunkát is magában foglal.</p>
+                    </div>
+                </div>
+                <div class="aspect-square bg-beige overflow-hidden">
+                    <img src="/images/ui/a dekoráció ára.jpg" alt="Esküvői dekoráció árazása" class="w-full h-full object-cover" />
+                </div>
+            </div>
 
-        <!-- Hogyan dolgozom? -->
-        <div id="folyamat" class="fade-in scroll-mt-32">
-            <h2 class="text-2xl font-display mb-8 pb-4 border-b border-beige">Hogyan dolgozom?</h2>
-            <div class="space-y-6 text-text-muted">
-                <p>Munkámat lelkiismerettel végzem, mert ez egyben a szenvedélyem is. Fontos számomra, hogy rólatok levegyek minden terhet, és hozzáadjam kreativitásomat az esküvőtök személyesebbé tételéhez.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Dátum foglaltságának ellenőrzése</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Árajánlatkérés (űrlapon vagy üzenetben)</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Hozzávetőleges árlista készítése</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Személyes vagy online egyeztetés</li>
-                    </ul>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Személyre szabott árajánlat</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Szerződéskötés & Helyszínbejárás</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Installálás az esküvő napján</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-mocha rounded-full"></span> Bontás és elszállítás másnap</li>
-                    </ul>
+            <div class="bg-beige/20 p-8 md:p-12 border border-beige/50">
+                <h3 class="text-xl font-display mb-6">Minden esküvőnek jár a saját dekoráció</h3>
+                <p class="text-text-muted leading-relaxed italic">
+                    "Hiszem, hogy minden esküvőnek egyedinek kell lennie, a Ti elvárásaitoknak megfelelően és az adott esküvői helyszín adta lehetőségek figyelembe vételével, személyre szabottan kell elkészülnie. Sokkal inkább egy alkotási folyamat részeként tekintek az egyes dekorok megvalósítására, mint rutin munkafolyamatokra. Emiatt minden egyes esküvőre külön dekor készül."
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: Milyen stílusban? -->
+        <section id="stilus" class="fade-in scroll-mt-32 space-y-12">
+            <div class="text-center space-y-6">
+                <h2 class="text-3xl font-display text-text-dark">Milyen stílusban dolgozom?</h2>
+                <div class="w-8 h-[1px] bg-terracotta mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="prose prose-mocha text-text-muted space-y-6">
+                    <p>
+                        Munkáim tükrözik azokat a stílusokat, amelyekben otthonosan mozgok: a klasszikus eleganciától a romantikus vintage-en át a modern geometrikusig. Ugyanakkor minden évben akad egy-egy olyan újszerű dekoráció, amelynek megálmodása a folyamatos megújulást biztosítja számomra.
+                    </p>
+                    <p>
+                        Nemrég elvégeztem a <strong>Virágos Masterclass</strong> képzést, ahol a fókusz a természetességre helyeződött. Célom, hogy kompozícióim minél inkább az organikus formákat és textúrákat tükrözzék, szabadon, de mégis harmonikusan.
+                    </p>
+                </div>
+                <div class="bg-beige/30 p-8 space-y-4">
+                    <h4 class="text-xs uppercase tracking-widest font-bold text-mocha">Fenntarthatóság & Technika</h4>
+                    <p class="text-sm text-text-muted leading-relaxed">
+                        Az egyik legfontosabb aspektus, amit tanultam, a <strong>tűzőhabmentes technika</strong> alkalmazása. Ez a technika nemcsak fenntarthatóbb, de lehetővé teszi, hogy a virágkötészet valóban a természet szépségét tükrözze, ne pedig mesterséges formákat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <p class="text-[10px] uppercase tracking-widest font-bold text-center">Trendek, amiket figyelembe veszünk:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    {['Laza, természetes', 'Földszínek (Bézs, Terrakotta)', 'Friss & Szárított kombináció', 'Részletgazdag minőség'].map(trend => (
+                        <div class="border border-beige p-4 text-center text-[11px] uppercase tracking-widest text-text-muted">{trend}</div>
+                    ))}
+                </div>
+                <p class="text-xs text-center text-text-muted italic max-w-2xl mx-auto">
+                    Figyelembe vesszük és ajánljuk is az aktuális trendeket, főleg ha bizonytalanságot tapasztalunk. Segítünk a sok kívánságot egy egységes, letisztult koncepcióba gyúrni.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: Színválasztás -->
+        <section id="szinvalasztas" class="fade-in scroll-mt-32 space-y-8">
+            <h2 class="text-3xl font-display text-text-dark border-l-4 border-terracotta pl-6">Hogyan válasszuk ki az esküvői színeket?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg">Helyszín & Évszak</h3>
+                    <p class="text-sm text-text-muted">Nézzétek meg, milyen színek dominálnak a helyszínen (falak, padló). A tavaszi esküvőhöz levendula és pasztell, az őszhöz burgundi és arany, a télihez jégkék vagy klasszikus piros-arany illik.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg">Személyes stílus</h3>
+                    <p class="text-sm text-text-muted">Nézzétek át a ruhatáratokat! A kedvenc színeitek remek kiindulópontok. Ha a sötétet szeretitek, a mélykék vagy sötétzöld, ha a semlegeset, a púder és bézs a jó választás.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg">A 1+2 szabály</h3>
+                    <p class="text-sm text-text-muted">Válasszatok egy fő színt és két kiegészítő színt. Például a levendulát lágy szürkével és krémmel, vagy a korallt világos bézzsel.</p>
+                </div>
+            </div>
+            <div class="p-8 bg-mocha text-white text-center italic text-sm">
+                "Ne féljetek a különleges párosításoktól! A sötétkék arannyal drámai, a mélyzöld rozsdaszínnel pedig meleg, földies hatást kelt."
+            </div>
+        </section>
+
+        <!-- Section: Költségvetés -->
+        <section id="koltsegvetes" class="fade-in scroll-mt-32 space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-display text-text-dark">Esküvői dekoráció költségvetése</h2>
+                <p class="text-[10px] uppercase tracking-widest text-mocha font-bold">8 tipp a tudatos tervezéshez</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">01</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Prioritások</h4>
+                        <p class="text-sm text-text-muted">Döntsétek el, mi a legfontosabb: a főasztal, a szertartás helyszíne vagy a vendégasztalok?</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">02</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Szezonalitás</h4>
+                        <p class="text-sm text-text-muted">Használjatok szezonális virágokat, ezek frissebbek és kedvezőbb árúak.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">03</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Egyszerűség</h4>
+                        <p class="text-sm text-text-muted">Néha a kevesebb több. Pár jól megválasztott elem látványosabb lehet, mint sok kicsi.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">04</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Újrahasznosítás</h4>
+                        <p class="text-sm text-text-muted">A szertartás virágai később díszíthetik a vacsora helyszínét is.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">05</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Költségek mérlegelése</h4>
+                        <p class="text-sm text-text-muted">Egy profi dekoratőr segít a kereten belül maradni, elkerülve a felesleges kiadásokat.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <span class="text-3xl font-display text-beige">06</span>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm">Rejtett költségek</h4>
+                        <p class="text-sm text-text-muted">Szállítással, dekorálással és bontással is számolnotok kell.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Csekklista -->
+        <section id="csekklista" class="fade-in scroll-mt-32">
+            <div class="bg-beige p-12 md:p-20 relative overflow-hidden">
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <h2 class="text-3xl font-display">A Csekklista</h2>
+                        <h3 class="text-xs uppercase tracking-widest font-bold text-mocha">Avagy mennyi mindent szokás dekorálni</h3>
+                        <div class="w-12 h-[1px] bg-terracotta"></div>
+                        <ul class="space-y-4 text-sm text-text-muted columns-1 sm:columns-2">
+                            <li>Menyasszonyi csokor</li>
+                            <li>Dobócsokor</li>
+                            <li>Koszorúslányok csokrai</li>
+                            <li>Szülők köszöntő csokrai</li>
+                            <li>Kitűzők a vőlegénynek</li>
+                            <li>Kitűzők a vendégeknek</li>
+                            <li>Virágékszerek (csuklóra)</li>
+                            <li>Hajdíszek</li>
+                            <li>Autó dekoráció</li>
+                            <li>Asztaldísz a főasztalra</li>
+                            <li>Vendégasztalok díszei</li>
+                            <li>Bejárat díszítése</li>
+                            <li>Székek díszítése</li>
+                            <li>Boldogságkapu</li>
+                            <li>Templomi főoltár & padok</li>
+                        </ul>
+                    </div>
+                    <div class="hidden lg:block">
+                        <img src="/images/ui/a csekklista.jpg" alt="Esküvői dekorációs csekklista" class="w-full h-full object-cover shadow-2xl rotate-3" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: A folyamat -->
+        <section id="folyamat" class="fade-in scroll-mt-32 space-y-12">
+            <div class="text-center space-y-6">
+                <h2 class="text-3xl font-display text-text-dark">Hogyan zajlik az esküvői megbeszélés?</h2>
+                <div class="w-8 h-[1px] bg-terracotta mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+               <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">1</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Kapcsolatfelvétel</h4>
+                            <p class="text-sm text-text-muted">Időpont egyeztetése után egy kérdőívvel gyűjtöm be az információkat.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">2</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Egyeztetés</h4>
+                            <p class="text-sm text-text-muted">Személyesen, telefonon vagy online. Akár külföldről is dolgozhatunk.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">3</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Ajánlat & Szerződés</h4>
+                            <p class="text-sm text-text-muted">A költségkeret és az elképzelések véglegesítése után szerződést kötünk.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">4</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Prioritások</h4>
+                            <p class="text-sm text-text-muted">Átbeszéljük a speciális kívánságokat és a spórolási lehetőségeket.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">5</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Részletek kidolgozása</h4>
+                            <p class="text-sm text-text-muted">Gördülékeny tervezés minden apró részletre kiterjedően.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-terracotta text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display">6</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm">Utolsó simítások</h4>
+                            <p class="text-sm text-text-muted">Két héttel a Nagy Nap előtt véglegesítünk minden döntést.</p>
+                        </div>
+                    </div>
+               </div>
+               <div class="space-y-6">
+                   <div class="aspect-video bg-beige overflow-hidden">
+                       <img src="/images/ui/hogyandolgozom2.jpg" alt="Munkában" class="w-full h-full object-cover" />
+                   </div>
+                   <p class="text-sm text-text-muted italic leading-relaxed">
+                       "Célunk, hogy stresszmentesen, gördülékenyen haladjon a tervezés, hogy Ti minél nyugodtabban várhassátok a Nagy Napot."
+                   </p>
+               </div>
+            </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    font-family: 'Outfit', sans-serif;
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+           </ul>
                 </div>
             </div>
         </div>

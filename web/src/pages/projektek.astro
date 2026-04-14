@@ -2,43 +2,95 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const esketoteremImages = [
+  "/images/ui/esketőterem (1).jpg",
+  "/images/ui/esketőterem (2).jpg",
+  "/images/ui/esketőterem (3).jpg",
+  "/images/ui/esketőterem (4).jpg",
+  "/images/ui/esketőterem (5).jpg",
+  "/images/ui/esketőterem (6).jpg",
+  "/images/ui/esketőterem (7).jpg"
+];
 ---
 
 <Layout title="Különleges Projektek | EventBox Decor">
   <Header />
   
-  <main class="py-24 px-5">
-    <div class="max-w-4xl mx-auto space-y-24">
+  <main class="py-24 px-5 bg-white">
+    <div class="max-w-6xl mx-auto space-y-32">
       
-      <div id="ujszekely" class="fade-in space-y-12">
-        <div class="text-center space-y-4">
-          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Referencia</span>
-          <h1 class="text-4xl md:text-5xl font-display uppercase tracking-widest leading-tight">Esketőterem - Újszékely</h1>
+      <!-- Section: Esketőterem -->
+      <article id="esketoterem" class="fade-in space-y-16">
+        <div class="text-center space-y-6 max-w-4xl mx-auto">
+          <span class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-semibold">Kiemelt Referencia</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display uppercase tracking-widest leading-tight text-text-dark">Esketőterem Átalakítás</h1>
           <div class="w-12 h-[1px] bg-terracotta mx-auto"></div>
+          
+          <div class="space-y-6 text-text-muted leading-relaxed italic text-sm md:text-base pt-6">
+            <p>
+                Egy ilyen projekt különleges mérföldkő egy dekoratőr számára. A pályafutás során nem mindennapos, hogy felkérjenek egy esketőterem teljes átalakítására, hiszen ez több mint dekoráció: egy teljes atmoszféra megálmodása és megteremtése. 
+            </p>
+            <p>
+                Ez azt is jelenti, hogy nemcsak a vizuális szépségre, hanem az érzelmek kifejezésére és az esemény szakrális jellegére is figyelni kell. Ez az álomprojekt nemcsak szakmai kihívás volt, hanem lehetőséget adott arra, hogy minden kreativitásomat és szenvedélyemet beleadjam.
+            </p>
+          </div>
         </div>
 
-        <div class="aspect-video bg-beige overflow-hidden">
-             <!-- Placeholder -->
-            <div class="w-full h-full bg-[url('https://picsum.photos/seed/ujszekely/1200/800')] bg-cover bg-center"></div>
+        <!-- Main Image -->
+        <div class="aspect-video bg-beige overflow-hidden shadow-2xl">
+            <img src="/images/ui/esketőterem (5).jpg" alt="Esketőterem főnézet" class="w-full h-full object-cover" />
         </div>
 
-        <div class="prose prose-mocha max-w-none text-text-muted leading-relaxed space-y-6">
-          <p class="text-lg font-display italic text-text-dark text-center">Újszékely község korábbi tanácstermének újjászületése</p>
-          <p>
-            Egy fiatalos, lendületes teret alkottunk meg, ahol az esküvői fogadalmak és az örökkévalóság elegáns harmóniában találkoznak. Minden részletnek megvan a maga üzenete:
-          </p>
-          <ul class="space-y-4">
-            <li><strong>Földszínek:</strong> Textíliák az év legnemesebb árnyalataiban, melyek időtálló eleganciát és természetes nyugalmat árasztanak.</li>
-            <li><strong>Monumentális csillárok:</strong> Pompás fényáradatba borítják a teret, emelve az alkalom ünnepélyességét.</li>
-            <li><strong>Boldogságkapu & Karikagyűrűtartó:</strong> Fából készült egyedi tervezés, mely a tradíciók mély gyökereit szimbolizálja.</li>
-            <li><strong>Selyemvirág kompozíciók:</strong> Az időtlen szépséget és eleganciát képviselik, a természetesség illúzióját keltve.</li>
-            <li><strong>80 cm-es Szerelemfa:</strong> Izlandi zuzmóból készült központi dísz, mely az összetartozás örök virágzását jelképezi.</li>
-          </ul>
-          <p class="text-center pt-8">
-            Ez az álomprojekt lehetőséget adott arra, hogy minden kreativitásomat és szenvedélyemet beleadjam. Hálás szívvel köszönöm a bizalmat Újszékely község elöljáróinak!
-          </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="prose prose-mocha max-w-none text-text-muted leading-relaxed space-y-8">
+                <h3 class="font-display text-3xl text-text-dark">Az újjászületés részletei</h3>
+                <p>
+                    A tér megalkotásakor a cél egy fiatalos, mégis méltóságteljes környezet létrehozása volt, ahol az esküvői fogadalmak és az örökkévalóság elegáns harmóniában találkoznak.
+                </p>
+                <div class="space-y-6 pt-4">
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 shrink-0 bg-beige flex items-center justify-center rounded-full"><i class="fas fa-palette text-mocha text-xs"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-1">Földszínek & Textíliák</h4>
+                            <p class="text-xs">Az év legnemesebb árnyalataiban pompázó textíliák időtálló eleganciát és nyugalmat árasztanak.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 shrink-0 bg-beige flex items-center justify-center rounded-full"><i class="fas fa-leaf text-mocha text-xs"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-1">Selyemvirág Kompozíciók</h4>
+                            <p class="text-xs">Az időtlen szépséget képviselik, a természetesség illúzióját keltve a szakrális térben.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 shrink-0 bg-beige flex items-center justify-center rounded-full"><i class="fas fa-tree text-mocha text-xs"></i></div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest mb-1">80 cm-es Szerelemfa</h4>
+                            <p class="text-xs">Izlandi zuzmóból készült központi dísz, mely az összetartozás örök virágzását jelképezi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                {esketoteremImages.slice(0, 4).map((img) => (
+                    <div class="aspect-square bg-beige overflow-hidden shadow-md">
+                        <img src={img} alt="Esketőterem részlet" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                    </div>
+                ))}
+            </div>
         </div>
-      </div>
+
+        <!-- Full Gallery Link or Carousel -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+             {esketoteremImages.slice(4).map((img) => (
+                <div class="aspect-[4/5] bg-beige overflow-hidden shadow-sm">
+                    <img src={img} alt="Esketőterem galéria" class="w-full h-full object-cover" />
+                </div>
+            ))}
+        </div>
+      </article>
 
     </div>
   </main>
